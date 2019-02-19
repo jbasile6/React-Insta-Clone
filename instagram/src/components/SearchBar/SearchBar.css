@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+
+
+.searchbar-container {
+    height:45px;
+    display: flex;
+    justify-content: space-between;
+    width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .logo-container {
+      height: 100%;
+      display: flex;
+      justify-content: space-between; 
+      width: 25%;
+  }
+
+
+  img {
+      height: 100%;
+  }
+.icons {
+    width: 25%;
+}
+
+i {
+    width: 20px;
+    height: 20px;
+}
+  
+
+
+  div {
+      border: 1px solid red;
+  }
