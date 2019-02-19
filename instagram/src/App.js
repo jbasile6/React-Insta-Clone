@@ -18,7 +18,7 @@ class App extends Component {
       <div className="search-bar">
         <SearchBar />
       </div>
-      <PostsContainer posts={this.state.posts} />
+      <PostsContainer posts={this.state.dummyDataArray} />
       </div>
     );
   }
