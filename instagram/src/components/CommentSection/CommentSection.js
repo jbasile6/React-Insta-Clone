@@ -1,5 +1,6 @@
 import React from 'react';
 import Comment from './Comment';
+import './CommentSection.css';
 
 //Need to store comments array in state, must use class constructor(i think lol)
 
