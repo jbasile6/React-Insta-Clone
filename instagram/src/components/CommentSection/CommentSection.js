@@ -2,6 +2,8 @@ import React from 'react';
 import Comment from './Comment';
 import './CommentSection.css';
 
+import PropTypes from 'prop-types';
+
 //Need to store comments array in state, must use class constructor(i think lol)
 
 class CommentSection extends React.Component {
@@ -28,6 +30,15 @@ class CommentSection extends React.Component {
 
         )
     }
+}
+
+CommentSection.propTypes = {
+    comments: PropTypes.arrayOf(
+        PropTypes.shape({ 
+            text: PropTypes.string,
+            username: PropTypes.string
+        })
+    )
 }
 
 
