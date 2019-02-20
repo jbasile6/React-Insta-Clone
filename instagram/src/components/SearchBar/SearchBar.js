@@ -5,6 +5,7 @@ import './SearchBar.css';
 
 
 const SearchBar = () => {
+    console.log('SearchBar.js rendering');
     return (
         <div className="searchbar-container">
             <div className="logo-container">

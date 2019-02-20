@@ -7,18 +7,17 @@ const Post = props => {
         <div className="eachPost-container">
             <div className="post-header">
                 <div className="post-thumbnail">
-                    <img className="thumbnail-header" src={props.post.thumbnailUrl}  alt="Thumbail Image" />
+                    <img className="thumbnail-header" src={props.post.thumbnailUrl} alt="Thumbail Image" />
                 </div>
                 <p><strong>{props.post.username}</strong></p>
             </div>
 
             <div className="post-image-container">
-            <img className="post-image" src={props.post.imageUrl} alt="Post Image" />
+                <img className="post-image" src={props.post.imageUrl} alt="Post Image" />
             </div>
-            <div className="likes"><strong>{props.post.likes} Likes</strong></div>
 
             <div className="comment-section">
-                <CommentSection comments={props.post.comments} />
+                <CommentSection comments={props.post.comments} likes={props.post.likes} />
             </div>
 
 
