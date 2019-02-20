@@ -16,7 +16,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log('CDM running...');
+    //console.log('CDM running...');
     this.setState({ dummyDataArray: dummyData})
     {/*DAY 2 STEP 1^^^*/}
   }
@@ -27,7 +27,7 @@ class App extends Component {
   }
 
   render() {
-    console.log('Rendering App.js')
+    //console.log('Rendering App.js')
     return (
       <div className="App">
       <div className="search-bar">

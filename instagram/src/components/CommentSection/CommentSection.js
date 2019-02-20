@@ -11,7 +11,8 @@ class CommentSection extends React.Component {
         super(props);
         this.state = {
             comments: props.comments,
-            likes: props.likes
+            likes: props.likes,
+            liked: false
         };
     }
 
@@ -39,12 +40,32 @@ class CommentSection extends React.Component {
         });
     }
 
+    handleLike = () => {
+
+        if (!this.state.liked) {
+        this.setState(prevState => ({
+            likes: prevState.likes += 1,
+            liked: true,
+        }));
+    }  else {
+        this.setState(prevState => ({
+            likes: prevState.likes -= 1,
+            liked: false
+        }))
+    }
+}
+
+
+    componentDidUpdate() {
+        console.log('new comment!');
+    }
+
 
     render() {
         return (
             <div className="comment-section-container">
                 <div className="like-comment-icons">
-                    <i className="fa fa-heart" />
+                    <i className="fa fa-heart" onClick={this.handleLike} />
                     <i className="fas fa-comment"></i>
                 </div>
 
