@@ -11,7 +11,8 @@ class App extends Component {
     console.log('Constructor running');
     super();
     this.state = {
-      dummyDataArray: []
+      dummyDataArray: [],
+      searchedPosts: []
     };
   }
 
@@ -26,14 +27,28 @@ class App extends Component {
 
   }
 
+  filterPosts = e => {
+    const filteredPosts = this.state.dummyDataArray.filter(post => {
+      if (post.username.includes(e.target.value)) {
+        return post;
+      }
+    });
+    this.setState({ searchedPosts: filteredPosts });
+  }
+
   render() {
     //console.log('Rendering App.js')
     return (
       <div className="App">
       <div className="search-bar">
-        <SearchBar />
+        <SearchBar 
+        searchTerm={this.state.searchTerm}
+        searchPosts={this.filterPosts} />
       </div>
-      <PostsContainer posts={this.state.dummyDataArray} />
+      <PostsContainer posts={
+        this.state.searchedPosts.length > 0
+        ? this.state.searchedPosts
+        : this.state.dummyDataArray} />
       </div>
     );
   }
